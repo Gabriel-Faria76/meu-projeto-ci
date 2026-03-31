@@ -1,0 +1,34 @@
+  119  docker --version
+  120  sudo systemctl start docker
+  121  act --version
+  122  curl -O https://raw.githubusercontent.com/nektos/act/master/install.sh
+  123  sudo apt  install curl
+  124  curl -O https://raw.githubusercontent.com/nektos/act/master/install.sh
+  125  act --version
+  126  sudo bash install.sh
+  127  sudo mv ./bin/act /usr/local/bin/act
+  128  act --version
+  129  sudo systemctl status docker
+  130  cd 'Área de Trabalho'
+  131  ls
+  132  cd 'Área de trabalho'
+  133  mkdir meu-projeto-ci
+  134  cd meu-projeto-ci
+  135  git init
+  136  nano README.md
+  137  git add README.md
+  138  git commit-m 'Primeiro Commit'
+  139  git commit -m 'Primeiro Commit'
+  140  mkdir -p .github/workflows
+  141  nano 01-hello-local.yml
+  142  nano .github/workflows/01-hello-local.yml
+  143  act -l
+  144  sudo act -W .github/workflows/01-hello-local.yml | grep "|"
+  145  nano .github/workflows/02-pipeline-principal.yml
+  146  act -l
+  147  sudo act -W .github/workflows/02-pipeline-principal.yml -P ubuntu-latest=node:slim
+  148  sudo act -n -W .github/workflows/02-pipeline-principal.yml
+  149  sudo act -j scan-de-seguranca
+  150  nano README.md
+  151  history 50
+  152  history 50 > comandos.txt

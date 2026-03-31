@@ -1,0 +1,34 @@
+name: Pipeline Principal
+
+on:
+  push:
+
+jobs:
+  setup-e-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Lint e setup
+        run: echo "Analisando qualidade do código..."
+
+  testes-unitarios:
+    runs-on: ubuntu-latest
+    needs: setup-e-lint
+    steps:
+      - name: Testes
+        run: echo "Rodando testes unitários..."
+
+  scan-de-seguranca:
+    runs-on: ubuntu-latest
+    needs: setup-e-lint
+    steps:
+      - name: Scan
+        run: echo "Procurando vulnerabilidades..."
+
+  build-e-deploy:
+    runs-on: ubuntu-latest
+    needs:
+      - testes-unitarios
+      - scan-de-seguranca
+    steps:
+      - name: Build e deploy
+        run: echo "Gerando artefato e fazendo deploy..."
