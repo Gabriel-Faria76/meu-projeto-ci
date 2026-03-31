@@ -7,4 +7,3 @@ Stage  Job ID             Job name           Workflow name       Workflow file  
 
 Os Jobs 2 (testes-unitarios) e 3 (scan-de-seguranca) rodaram em paralelo porque ambos aparecem no mesmo Stage (Stage 1) na
  saída do comando act -l.
-
